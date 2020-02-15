@@ -1,2 +1,2 @@
 # homebrew-tap
-homebrew taps (migrating...)
+homebrew taps
