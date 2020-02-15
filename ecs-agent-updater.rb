@@ -2,16 +2,16 @@
 class EcsAgentUpdater < Formula
   desc "update ECS agent with CLI."
   homepage "https://github.com/reiki4040/ecs-agent-updater"
-  version "0.1.3"
+  version "0.1.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/reiki4040/ecs-agent-updater/releases/download/v0.1.3/ecs-agent-updater_darwin_x86_64.tar.gz"
-    sha256 "0eb33cbf954beda275e3846a55b1f23bf4ee46f4644c3031a559cfe1082f3b60"
+    url "https://github.com/reiki4040/ecs-agent-updater/releases/download/v0.1.4/ecs-agent-updater_darwin_x86_64.tar.gz"
+    sha256 "11b290b5f6b8f7a017f270f2d6a0992bfa09f153a6f53f78adb84d4065e5f91e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/ecs-agent-updater/releases/download/v0.1.3/ecs-agent-updater_linux_x86_64.tar.gz"
-      sha256 "737826dc68db1ec342a14446ec4760dc19451b814a547475962d976781f6c20e"
+      url "https://github.com/reiki4040/ecs-agent-updater/releases/download/v0.1.4/ecs-agent-updater_linux_x86_64.tar.gz"
+      sha256 "1035483b9991d7ecec436bd646ca538fb1cfb2f6c86ab82cea21287487df562f"
     end
   end
 
