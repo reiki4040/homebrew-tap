@@ -6,7 +6,6 @@ class Mogura < Formula
   desc "ssh tunneling tool"
   homepage "https://github.com/reiki4040/mogura"
   version "0.2.3"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/reiki4040/mogura/releases/download/v0.2.3/mogura_darwin_x86_64.tar.gz"

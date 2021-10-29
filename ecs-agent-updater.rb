@@ -3,7 +3,6 @@ class EcsAgentUpdater < Formula
   desc "update ECS agent with CLI."
   homepage "https://github.com/reiki4040/ecs-agent-updater"
   version "0.1.4"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/reiki4040/ecs-agent-updater/releases/download/v0.1.4/ecs-agent-updater_darwin_x86_64.tar.gz"
