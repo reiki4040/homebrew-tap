@@ -3,7 +3,6 @@ class Rnssh < Formula
   desc "Easy ssh to EC2"
   homepage "https://github.com/reiki4040/rnssh"
   version "0.5.1"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/reiki4040/rnssh/releases/download/v0.5.1/rnssh_darwin_x86_64.tar.gz"
@@ -22,17 +21,17 @@ class Rnssh < Formula
   def caveats; <<~EOS
     # rnssh need AWS access key for working.
     # Please set key/secret to AWS credentials (~/.aws/credentials)
-    
+
     [default]
     aws_access_key_id=your_key_id
     aws_secret_access_key=your_secret
-    
+
     # or environment variable for AWS connection.
     # (~/.bashrc, ~/.zshrc or other.)
-    
+
     export AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY
     export AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY
-    
+
     # set default aws region.
     rnssh -init
   EOS
