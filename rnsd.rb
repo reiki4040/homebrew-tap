@@ -3,7 +3,6 @@ class Rnsd < Formula
   desc "control AWS Service Discovery command"
   homepage "https://github.com/reiki4040/rnsd"
   version "0.1.0"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/reiki4040/rnsd/releases/download/v0.1.0/rnsd_darwin_x86_64.tar.gz"
