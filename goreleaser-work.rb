@@ -5,20 +5,20 @@
 class GoreleaserWork < Formula
   desc "show version info only."
   homepage "https://github.com/reiki4040/goreleaser-work"
-  version "0.2.5"
+  version "0.2.6"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.5/goreleaser-work_darwin_x86_64.tar.gz"
-      sha256 "2751b09848a29eed9ae050d3604ff5c10be5ea021c46492053086b87a992ad2a"
+    if Hardware::CPU.arm?
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.6/goreleaser-work_darwin_arm64.tar.gz"
+      sha256 "451dfd71efb5930dea96a8088884d22e54c99a9a0799d83ca5c40d09b64eb805"
 
       def install
         bin.install "goreleaser-work"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.5/goreleaser-work_darwin_arm64.tar.gz"
-      sha256 "16cb64dee51b2b3b1673feaea5645d2670ffb221f2f3f4f14873c523df58a02b"
+    if Hardware::CPU.intel?
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.6/goreleaser-work_darwin_x86_64.tar.gz"
+      sha256 "5b49be67ab52421f7ac3887698316e15734ff3592343cd9e2335a0daaf286b3b"
 
       def install
         bin.install "goreleaser-work"
@@ -27,17 +27,17 @@ class GoreleaserWork < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.5/goreleaser-work_linux_x86_64.tar.gz"
-      sha256 "ea2a6558bcf7b82cd9fbbe6953f4d4e7f9e05511ad7f419009087f9e829bfefc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.6/goreleaser-work_linux_arm64.tar.gz"
+      sha256 "b2357787f878f9b59757fbbe0d956432d858d8cf8077193ca4a514804c1e6fb2"
 
       def install
         bin.install "goreleaser-work"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.5/goreleaser-work_linux_arm64.tar.gz"
-      sha256 "84584b396b181598bd967cbec1611efadeabdc9640778486285a7f8611abbb6a"
+    if Hardware::CPU.intel?
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.2.6/goreleaser-work_linux_x86_64.tar.gz"
+      sha256 "5b6e53d6f6c61617c292952ab6073f1e6f563b68950c3581929209c12a54b6aa"
 
       def install
         bin.install "goreleaser-work"
@@ -45,8 +45,9 @@ class GoreleaserWork < Formula
     end
   end
 
-  def caveats; <<~EOS
-    this message is shown on console when finished install with homebrew.
-  EOS
+  def caveats
+    <<~EOS
+      this message is shown on console when finished install with homebrew.
+    EOS
   end
 end
