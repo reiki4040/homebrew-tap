@@ -5,20 +5,20 @@
 class GoreleaserWork < Formula
   desc "show version info only."
   homepage "https://github.com/reiki4040/goreleaser-work"
-  version "0.3.2"
+  version "0.3.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.2/goreleaser-work_Darwin_arm64.tar.gz"
-      sha256 "4ca486d89663004ae41df3f93d3081442deb508501b4b054a969b3c498f6a225"
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.3/goreleaser-work_darwin_arm64.tar.gz"
+      sha256 "10a45910c89296a448379fcd0e4c192e31e4366106501bf6262a2293ea07b4af"
 
       def install
         bin.install "goreleaser-work"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.2/goreleaser-work_Darwin_x86_64.tar.gz"
-      sha256 "5357581ce1f0170e3281da41da8475eb886fa6fa76f8ec80987018a3685fc56b"
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.3/goreleaser-work_darwin_x86_64.tar.gz"
+      sha256 "6108da0c28544b59bf24f2ddbe2231eefd59c771bc894da9822bc1fdd4d68d60"
 
       def install
         bin.install "goreleaser-work"
@@ -28,16 +28,16 @@ class GoreleaserWork < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.2/goreleaser-work_Linux_x86_64.tar.gz"
-      sha256 "636ffc5ad2cc477fbfe9be9f5edfd97d072cab34966984fb18cb679afb10e67c"
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.3/goreleaser-work_linux_x86_64.tar.gz"
+      sha256 "11540e4238343085a2b4157605ffc3825c675456992283aabae8f09406e1be43"
 
       def install
         bin.install "goreleaser-work"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.2/goreleaser-work_Linux_arm64.tar.gz"
-      sha256 "be2f2a883004e2b158db1e7c37729186ebcc724ab34e78945c283ee3789a7fab"
+      url "https://github.com/reiki4040/goreleaser-work/releases/download/v0.3.3/goreleaser-work_linux_arm64.tar.gz"
+      sha256 "fc6c9406a5f99217c835fd0e85845e090ceaaf4ab68b13510d42ff3300991911"
 
       def install
         bin.install "goreleaser-work"
