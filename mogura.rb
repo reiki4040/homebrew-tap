@@ -5,18 +5,43 @@
 class Mogura < Formula
   desc "ssh tunneling tool"
   homepage "https://github.com/reiki4040/mogura"
-  version "0.2.3"
+  version "0.2.4"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/reiki4040/mogura/releases/download/v0.2.3/mogura_darwin_x86_64.tar.gz"
-    sha256 "6d5ed49d2015fb301881c29e7b0920537ab2470380a6b606063c96ac48bcb17a"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/reiki4040/mogura/releases/download/v0.2.3/mogura_linux_x86_64.tar.gz"
-    sha256 "b3601d18e11108e30a2bf5205c8e9c48054e2d3783bca11b9af580af3c40b122"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_darwin_arm64.tar.gz"
+      sha256 "1ad51575a687e4f646c61d17a785d128b5f1d41c8c11a06266bf2330692a6aa1"
+
+      def install
+        bin.install "mogura"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_darwin_x86_64.tar.gz"
+      sha256 "30917c7528fc3495ac01f1d8f373ccd5ccadf0d02b4fdf5a36a1fe48f1532b41"
+
+      def install
+        bin.install "mogura"
+      end
+    end
   end
 
-  def install
-    bin.install "mogura"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_linux_arm64.tar.gz"
+      sha256 "36640f8d2277217716350774432f01c1809f7f9a0682b53154e2c3ef3b2796b5"
+
+      def install
+        bin.install "mogura"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_linux_x86_64.tar.gz"
+      sha256 "7f700d3071ca802ec166aa1d40419e3c2ed9065f4c26b9d5017e6128b97d422f"
+
+      def install
+        bin.install "mogura"
+      end
+    end
   end
 end
