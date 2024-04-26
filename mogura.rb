@@ -5,20 +5,20 @@
 class Mogura < Formula
   desc "ssh tunneling tool"
   homepage "https://github.com/reiki4040/mogura"
-  version "0.2.4"
+  version "0.2.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_darwin_arm64.tar.gz"
-      sha256 "1ad51575a687e4f646c61d17a785d128b5f1d41c8c11a06266bf2330692a6aa1"
+    if Hardware::CPU.intel?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.5/mogura_darwin_x86_64.tar.gz"
+      sha256 "1082a9b5758af60683fcb513fefd9531f0506bca4b7b6d5bf5fbbaf6ba1347f1"
 
       def install
         bin.install "mogura"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_darwin_x86_64.tar.gz"
-      sha256 "30917c7528fc3495ac01f1d8f373ccd5ccadf0d02b4fdf5a36a1fe48f1532b41"
+    if Hardware::CPU.arm?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.5/mogura_darwin_arm64.tar.gz"
+      sha256 "9eac92115f4f4729d98682e8ee8968fad6dd706ecb5246c50d04c95142a1cb6a"
 
       def install
         bin.install "mogura"
@@ -27,17 +27,17 @@ class Mogura < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_linux_arm64.tar.gz"
-      sha256 "36640f8d2277217716350774432f01c1809f7f9a0682b53154e2c3ef3b2796b5"
+    if Hardware::CPU.intel?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.5/mogura_linux_x86_64.tar.gz"
+      sha256 "f540b628d928c87184c1e3855a3ba48889d1accad70741bd0919189092d2cd1d"
 
       def install
         bin.install "mogura"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/mogura/releases/download/v0.2.4/mogura_linux_x86_64.tar.gz"
-      sha256 "7f700d3071ca802ec166aa1d40419e3c2ed9065f4c26b9d5017e6128b97d422f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.5/mogura_linux_arm64.tar.gz"
+      sha256 "12e7802c6b31d99afffa550b1f3dc8d2971a40e3c71d9e8abb75ef361741e6b4"
 
       def install
         bin.install "mogura"
