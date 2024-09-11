@@ -5,20 +5,20 @@
 class Msk < Formula
   desc "assume role helper"
   homepage "https://github.com/reiki4040/msk"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/msk/releases/download/v0.1.1/msk_darwin_x86_64.tar.gz"
-      sha256 "2c8ea4a6f8a41d48e409cca62632b826a5b5ac9c9fe2eefb628f5d92f2f024e1"
+    on_intel do
+      url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_darwin_x86_64.tar.gz"
+      sha256 "427f3c10d9b9c2ec71cdfb06e1b077825990a4f0519153ad19191444f1ba13b2"
 
       def install
         bin.install "msk"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/msk/releases/download/v0.1.1/msk_darwin_arm64.tar.gz"
-      sha256 "0e89fa79e4455756a77ed03c9bf5c1068e864f89670ae5fe243debeb8334e99e"
+    on_arm do
+      url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_darwin_arm64.tar.gz"
+      sha256 "71565121eb6c738ebb483f63f340dc9bb0f6984b2d19059f18bb3b1dceffdb98"
 
       def install
         bin.install "msk"
@@ -27,20 +27,24 @@ class Msk < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/msk/releases/download/v0.1.1/msk_linux_x86_64.tar.gz"
-      sha256 "ceb818d79ab31e66b958268ef504a1d4aaf3f42d94deda71499677e22601ceb2"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_linux_x86_64.tar.gz"
+        sha256 "7ae6645de77b7ea3f255f2c70f207aeb3cf67a084c5941a2893040846951ae29"
 
-      def install
-        bin.install "msk"
+        def install
+          bin.install "msk"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/msk/releases/download/v0.1.1/msk_linux_arm64.tar.gz"
-      sha256 "cb691092cf6e58f1edcd4eee7bf100c0d2c72c29e3ba18da68dae2cc5d234e4e"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_linux_arm64.tar.gz"
+        sha256 "5b229187b42ef57a91ac44b5bb07a58b18ec6afb45eae51e20c3921a55a2ec71"
 
-      def install
-        bin.install "msk"
+        def install
+          bin.install "msk"
+        end
       end
     end
   end
