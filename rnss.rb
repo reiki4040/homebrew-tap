@@ -5,20 +5,20 @@
 class Rnss < Formula
   desc "instance selection helper for aws ssm start-session"
   homepage "https://github.com/reiki4040/rnss"
-  version "0.0.1"
+  version "0.1.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnss/releases/download/v0.0.1/rnss_darwin_x86_64.tar.gz"
-      sha256 "ab3a89364d66f04ff2b3646da453708bc2f83c338cab166f918b19376992416a"
+    on_intel do
+      url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_darwin_x86_64.tar.gz"
+      sha256 "72bb6e56b19dad7737b6ebd344e25adfa378ad38924d9aa4f05f7e922c2f2589"
 
       def install
         bin.install "rnss"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/rnss/releases/download/v0.0.1/rnss_darwin_arm64.tar.gz"
-      sha256 "0252ccc3596c7183ac19e3666b1516a69c6fd83dc3a2b17c5bbd300be0d4ebfd"
+    on_arm do
+      url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_darwin_arm64.tar.gz"
+      sha256 "efb5be07f0e7920b44724643d1fa31fa34f30f742ca395045f255bdb2988a48e"
 
       def install
         bin.install "rnss"
@@ -27,20 +27,24 @@ class Rnss < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnss/releases/download/v0.0.1/rnss_linux_x86_64.tar.gz"
-      sha256 "a45496e80488278e0b18381e67c1ad49ebf760438b9d388d2d375bdfbfba87ac"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_linux_x86_64.tar.gz"
+        sha256 "1c320715c3dfc19dcd6f1173b74225c5a5a0460f1b0b1d7d8af25460b06698da"
 
-      def install
-        bin.install "rnss"
+        def install
+          bin.install "rnss"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/rnss/releases/download/v0.0.1/rnss_linux_arm64.tar.gz"
-      sha256 "7af0898e9aa2eea4c83e8fb053ef448f3e8037e5541cc73ef87f206a24b864c2"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_linux_arm64.tar.gz"
+        sha256 "ef954de09a4c56c8d99f8e7be5e0484cb25d4dffd950341199f5e239fe75d894"
 
-      def install
-        bin.install "rnss"
+        def install
+          bin.install "rnss"
+        end
       end
     end
   end
