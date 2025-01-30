@@ -5,20 +5,20 @@
 class Rnss < Formula
   desc "instance selection helper for aws ssm start-session"
   homepage "https://github.com/reiki4040/rnss"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_intel do
-      url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_darwin_x86_64.tar.gz"
-      sha256 "72bb6e56b19dad7737b6ebd344e25adfa378ad38924d9aa4f05f7e922c2f2589"
+      url "https://github.com/reiki4040/rnss/releases/download/v0.1.2/rnss_darwin_x86_64.tar.gz"
+      sha256 "09a3916605ac7691f207eecd691dd1bfd35a2bb1fad7c862cbef0174955185d8"
 
       def install
         bin.install "rnss"
       end
     end
     on_arm do
-      url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_darwin_arm64.tar.gz"
-      sha256 "efb5be07f0e7920b44724643d1fa31fa34f30f742ca395045f255bdb2988a48e"
+      url "https://github.com/reiki4040/rnss/releases/download/v0.1.2/rnss_darwin_arm64.tar.gz"
+      sha256 "c50e67c8fafd33aa6a99a443b0a4fb98de41bcc53b7fa7da94be6e9aeb509f99"
 
       def install
         bin.install "rnss"
@@ -29,8 +29,8 @@ class Rnss < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_linux_x86_64.tar.gz"
-        sha256 "1c320715c3dfc19dcd6f1173b74225c5a5a0460f1b0b1d7d8af25460b06698da"
+        url "https://github.com/reiki4040/rnss/releases/download/v0.1.2/rnss_linux_x86_64.tar.gz"
+        sha256 "28582f724617c129c2d13ebe8649b6243f73e9670861c4244fe5d4269a62c8ce"
 
         def install
           bin.install "rnss"
@@ -39,8 +39,8 @@ class Rnss < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/reiki4040/rnss/releases/download/v0.1.1/rnss_linux_arm64.tar.gz"
-        sha256 "ef954de09a4c56c8d99f8e7be5e0484cb25d4dffd950341199f5e239fe75d894"
+        url "https://github.com/reiki4040/rnss/releases/download/v0.1.2/rnss_linux_arm64.tar.gz"
+        sha256 "7b62ff164a4d69d69d3bf91a6bbbceb3652d72ce240c5083f67f6a217a039e5e"
 
         def install
           bin.install "rnss"
