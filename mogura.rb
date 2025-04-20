@@ -5,20 +5,20 @@
 class Mogura < Formula
   desc "ssh tunneling tool"
   homepage "https://github.com/reiki4040/mogura"
-  version "0.2.7"
+  version "0.2.8"
 
   on_macos do
     on_intel do
-      url "https://github.com/reiki4040/mogura/releases/download/v0.2.7/mogura_darwin_x86_64.tar.gz"
-      sha256 "0d12d4b3accf1d46469826e53d4112ceeca5836732090b3ea68d191db0773fe1"
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.8/mogura_darwin_x86_64.tar.gz"
+      sha256 "251248e3f63f96d8d0d18cf77a63c835051fd1b442081b2d0e13c84bb07bdc9d"
 
       def install
         bin.install "mogura"
       end
     end
     on_arm do
-      url "https://github.com/reiki4040/mogura/releases/download/v0.2.7/mogura_darwin_arm64.tar.gz"
-      sha256 "18284ffcf93806cecab368a0abd41165cfd32a9effc178900086f1132479112d"
+      url "https://github.com/reiki4040/mogura/releases/download/v0.2.8/mogura_darwin_arm64.tar.gz"
+      sha256 "46b344129d4aa97bb102cdf3c387ce95df2d77904d5e026549420460771fa205"
 
       def install
         bin.install "mogura"
@@ -29,8 +29,8 @@ class Mogura < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/reiki4040/mogura/releases/download/v0.2.7/mogura_linux_x86_64.tar.gz"
-        sha256 "f89bc72ca8438993923aed60c4f9de7968a451e41cf123ee2f082daff384eaec"
+        url "https://github.com/reiki4040/mogura/releases/download/v0.2.8/mogura_linux_x86_64.tar.gz"
+        sha256 "2bf28e7895a47a126bc5581e3fd063e74c2a7689ac2392a16be3674f8a1ddbd6"
 
         def install
           bin.install "mogura"
@@ -39,8 +39,8 @@ class Mogura < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/reiki4040/mogura/releases/download/v0.2.7/mogura_linux_arm64.tar.gz"
-        sha256 "262a9dd8254668ce92a853f3ffc68b3fc5abd0cc9121c9d48f86831e12bb02c6"
+        url "https://github.com/reiki4040/mogura/releases/download/v0.2.8/mogura_linux_arm64.tar.gz"
+        sha256 "320875d74cf3e8c29560bf71f62a409e4757dd33c19e04252e39fd96d6986e41"
 
         def install
           bin.install "mogura"
