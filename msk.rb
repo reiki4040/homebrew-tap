@@ -5,20 +5,20 @@
 class Msk < Formula
   desc "assume role helper"
   homepage "https://github.com/reiki4040/msk"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     on_intel do
-      url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_darwin_x86_64.tar.gz"
-      sha256 "427f3c10d9b9c2ec71cdfb06e1b077825990a4f0519153ad19191444f1ba13b2"
+      url "https://github.com/reiki4040/msk/releases/download/v0.1.3/msk_darwin_x86_64.tar.gz"
+      sha256 "4ad0908e59c16cd131dcd6cc9d526d836ec0d2495aa9f09edeb038ff3ca47e51"
 
       def install
         bin.install "msk"
       end
     end
     on_arm do
-      url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_darwin_arm64.tar.gz"
-      sha256 "71565121eb6c738ebb483f63f340dc9bb0f6984b2d19059f18bb3b1dceffdb98"
+      url "https://github.com/reiki4040/msk/releases/download/v0.1.3/msk_darwin_arm64.tar.gz"
+      sha256 "93d7f8124f19ed1672a6ee96b4cc3bd7f8d07aecbaef157f61be8ad2f789d089"
 
       def install
         bin.install "msk"
@@ -29,8 +29,8 @@ class Msk < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_linux_x86_64.tar.gz"
-        sha256 "7ae6645de77b7ea3f255f2c70f207aeb3cf67a084c5941a2893040846951ae29"
+        url "https://github.com/reiki4040/msk/releases/download/v0.1.3/msk_linux_x86_64.tar.gz"
+        sha256 "c784776afe73e97ef7b732d3ae21504f9af5bbeee608ec0eab1ab57c7c049201"
 
         def install
           bin.install "msk"
@@ -39,8 +39,8 @@ class Msk < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/reiki4040/msk/releases/download/v0.1.2/msk_linux_arm64.tar.gz"
-        sha256 "5b229187b42ef57a91ac44b5bb07a58b18ec6afb45eae51e20c3921a55a2ec71"
+        url "https://github.com/reiki4040/msk/releases/download/v0.1.3/msk_linux_arm64.tar.gz"
+        sha256 "79a73d6ab64bad8ce070bb68ebbef8d5a4680d1cb581d1b20c3a738ad6ffee56"
 
         def install
           bin.install "msk"
