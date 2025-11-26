@@ -5,20 +5,20 @@
 class Rnsd < Formula
   desc "control AWS Service Discovery command"
   homepage "https://github.com/reiki4040/rnsd"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/rnsd/releases/download/v0.2.1/rnsd_Darwin_arm64.tar.gz"
-      sha256 "d7aaa4165b97f8151a58f02b6e72d51a49cea0173fae04d9efe6d3ee5b4014e4"
+    on_intel do
+      url "https://github.com/reiki4040/rnsd/releases/download/v0.2.2/rnsd_Darwin_x86_64.tar.gz"
+      sha256 "a7709ab9ffcc8c7974820bd064c14fd790c07aec4e25302389a0a58416b4483a"
 
       def install
         bin.install "rnsd"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnsd/releases/download/v0.2.1/rnsd_Darwin_x86_64.tar.gz"
-      sha256 "cd5bb0fcec5869bb43a10adf09f7850a09f7d97b5e05f66d52bd1e15d86d7ef8"
+    on_arm do
+      url "https://github.com/reiki4040/rnsd/releases/download/v0.2.2/rnsd_Darwin_arm64.tar.gz"
+      sha256 "9a5d1e7f3a3a0104346374a1588e75f1cd48f62d36b47ecd4a1102a0b9c363a0"
 
       def install
         bin.install "rnsd"
@@ -27,20 +27,24 @@ class Rnsd < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/rnsd/releases/download/v0.2.1/rnsd_Linux_arm64.tar.gz"
-      sha256 "ea246a45f56a9d4cc74ee839eb7fe9d917e987dbeb39312ff5cf4311658eab5d"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnsd/releases/download/v0.2.2/rnsd_Linux_x86_64.tar.gz"
+        sha256 "5c7d4b3a21445c122561a289ce87616793b0b4a46b5149091b2b280d07235a28"
 
-      def install
-        bin.install "rnsd"
+        def install
+          bin.install "rnsd"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnsd/releases/download/v0.2.1/rnsd_Linux_x86_64.tar.gz"
-      sha256 "791a79a87cfc8d15b3fa229204601440dcda3b75f5caa831aa8a3966ff436f4b"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnsd/releases/download/v0.2.2/rnsd_Linux_arm64.tar.gz"
+        sha256 "d5308fdef6fc51c25df337c541f59a38a946081468511a281b343e9c8230888f"
 
-      def install
-        bin.install "rnsd"
+        def install
+          bin.install "rnsd"
+        end
       end
     end
   end
