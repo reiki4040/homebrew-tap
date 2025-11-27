@@ -5,20 +5,20 @@
 class Rnzoo < Formula
   desc "Useful tool for EC2."
   homepage "https://github.com/reiki4040/rnzoo"
-  version "0.6.1"
+  version "0.6.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.1/rnzoo_darwin_arm64.tar.gz"
-      sha256 "100a4327f51d9fb94e7ae6d20e785f8bce51d796e2558734476a15cb2e406bfd"
+    on_intel do
+      url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.2/rnzoo_darwin_x86_64.tar.gz"
+      sha256 "2b8b1f7fa2c56ab99236f399cf06f1a4756c49e1e5c1e6aa7a0f015d85c0072d"
 
       def install
         bin.install "rnzoo"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.1/rnzoo_darwin_x86_64.tar.gz"
-      sha256 "5f1e32760341226c3b9e4a57691fcfd2365fdf23d942b1d5bd9e75a4b5692d46"
+    on_arm do
+      url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.2/rnzoo_darwin_arm64.tar.gz"
+      sha256 "b8d959354108d07800d53a8821f57867ecdb8dc93fe413f92a21d116c685a060"
 
       def install
         bin.install "rnzoo"
@@ -27,20 +27,24 @@ class Rnzoo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.1/rnzoo_linux_arm64.tar.gz"
-      sha256 "1b8cd76da757b21d729e438d74064aac2dc631c537ebf8a302da34bd681dabd9"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.2/rnzoo_linux_x86_64.tar.gz"
+        sha256 "94d3237ea027def793547c57176b583ec5bf429387ff546e3c1c36e322521d91"
 
-      def install
-        bin.install "rnzoo"
+        def install
+          bin.install "rnzoo"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.1/rnzoo_linux_x86_64.tar.gz"
-      sha256 "9673a7887293c2b1e343a8091db8ee73b92e36d54d22d522e64fecd2575c6edb"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnzoo/releases/download/v0.6.2/rnzoo_linux_arm64.tar.gz"
+        sha256 "aa6d5bfeb76836114c351600c5e42144390984b7f3bea90c17499c91b1a19cc9"
 
-      def install
-        bin.install "rnzoo"
+        def install
+          bin.install "rnzoo"
+        end
       end
     end
   end
