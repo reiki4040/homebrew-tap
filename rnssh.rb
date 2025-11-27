@@ -5,20 +5,20 @@
 class Rnssh < Formula
   desc "Easy ssh to EC2"
   homepage "https://github.com/reiki4040/rnssh"
-  version "0.5.2"
+  version "0.5.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/reiki4040/rnssh/releases/download/v0.5.2/rnssh_darwin_arm64.tar.gz"
-      sha256 "00433aba007c9b64eab48899a103565d66ed890e96e9f34128e05981198fafd6"
+    on_intel do
+      url "https://github.com/reiki4040/rnssh/releases/download/v0.5.3/rnssh_darwin_x86_64.tar.gz"
+      sha256 "d934590283dfb618adeb080d170d736330062d113c30cb130186d8ab10dc3563"
 
       def install
         bin.install "rnssh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnssh/releases/download/v0.5.2/rnssh_darwin_x86_64.tar.gz"
-      sha256 "bcbd917eb3f7e9fcc13cd6fc6ef971763462d0bdd9d86e68b4df3ad19cd6a306"
+    on_arm do
+      url "https://github.com/reiki4040/rnssh/releases/download/v0.5.3/rnssh_darwin_arm64.tar.gz"
+      sha256 "c151092c79d00d081416857d79df14904fdd173910eb32101fb2f729daf16f3a"
 
       def install
         bin.install "rnssh"
@@ -27,20 +27,24 @@ class Rnssh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reiki4040/rnssh/releases/download/v0.5.2/rnssh_linux_arm64.tar.gz"
-      sha256 "f1b96c847c85fb68a26e1e22cdd6c295b9af9d898382ffcf72f9fb359a325838"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnssh/releases/download/v0.5.3/rnssh_linux_x86_64.tar.gz"
+        sha256 "f6cc3ae0e260bb0dbc2a2f5bd6fb47f44b21237cb84c35b497aee0468ce76315"
 
-      def install
-        bin.install "rnssh"
+        def install
+          bin.install "rnssh"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/reiki4040/rnssh/releases/download/v0.5.2/rnssh_linux_x86_64.tar.gz"
-      sha256 "30679f766b005516f8fe4de93466ca46a8ce3bf284f06cb98a9a169faf8431a4"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/reiki4040/rnssh/releases/download/v0.5.3/rnssh_linux_arm64.tar.gz"
+        sha256 "3faaacad467e38715d5ca67022b8ad7efb50d524fba017b684cbcf95ef4d8b68"
 
-      def install
-        bin.install "rnssh"
+        def install
+          bin.install "rnssh"
+        end
       end
     end
   end
